@@ -1,0 +1,163 @@
+/*
+A solution for Classic Cinema 2021
+Nick Meek
+ */
+
+@font-face {
+	font-family: 'dymaxionscriptregular';
+	src: url('./fonts/DymaxionScript-webfont.woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	color: darkslategrey;
+	background-color: #dddddd;
+	font-family: Verdana, sans-serif;
+	font-size: 10px;
+}
+
+body {
+	width: 700px;
+	margin: 0 auto;
+}
+
+header,
+main,
+footer {
+	padding: 10px;
+	margin: 0 0 10px 0;
+	border: 1px solid;
+	border-radius: 0 10px 10px 10px;
+	background-color: #eeeeee;
+	color: inherit;
+}
+
+h1,
+h2 {
+	font-family: dymaxionscriptregular, sans-serif;
+	margin: 0;
+}
+
+h1 {
+	font-size: 48px;
+	display: inline-block;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+h3 {
+	font-size: 14px;
+}
+
+figure {
+	margin: 0;
+}
+
+/**   Header **/
+header {
+	position: fixed;
+	top: 0;
+	width: inherit;
+	z-index: 100;
+}
+
+/** Login form **/
+#loginForm label {
+	display: inline-block;
+	width: 60px;
+}
+
+#loginSubmit {
+	float: right;
+}
+
+#user {
+	float: right;
+}
+
+#logout {
+	display: none;
+}
+
+/** Navigation **/
+nav ul {
+	list-style-type: none;
+	text-align: center;
+}
+
+nav li {
+	display: inline-block;
+	width: 75px;
+	margin: 0 10px 0 0;
+}
+
+nav li a {
+	display: block;
+}
+
+nav {
+	font-size: 12px;
+	text-align: right;
+	margin-top: 25px;
+}
+
+/**   main element   **/
+/*big top margin to display below header*/
+main {
+	margin-top: 150px;
+}
+
+/**   Index   **/
+#movieList li {
+	display: inline-block;
+	text-align: center;
+	width: 30%;
+}
+
+#movieList li img {
+	display: block;
+	margin: 0 auto;
+}
+
+
+/**   Film description style   **/
+.film {
+	clear: both;
+	margin: 15px 0;
+	min-height: 180px;
+}
+
+.film img {
+	margin: 0 10px;
+}
+
+.film:nth-of-type(odd) img {
+	float: left;
+}
+
+.film:nth-of-type(even) img {
+	float: right;
+}
+
+/**   Contact page   **/
+.contact {
+	list-style-type: none;
+	display: flex;
+}
+
+.contact li {
+	text-align: center;
+	width: 32%;
+}
+
+/**   Footer   **/
+footer {
+	text-align: right;
+}
