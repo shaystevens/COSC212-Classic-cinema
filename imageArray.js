@@ -31,11 +31,10 @@ function MovieCategory(title, image, page) {
     this.image = image;
     this.page = page;
     this.makeHTML = function() {
-        return "<a href='" + page + "'><figure><img src='" + image + "' ><figcaption>" + title + "</figcaption></figure></a>";
+        return "<a href='" + page + "'><figure><img src='" + image + "' class='center' ><figcaption>" + title + "</figcaption></figure></a>";
     };
 }
 
 if (document.getElementById) {
     window.onload = setup;
-
 }
