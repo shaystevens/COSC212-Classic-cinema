@@ -157,6 +157,16 @@ main {
 	width: 32%;
 }
 
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+figcaption {
+	text-align: center;
+}
+
 /**   Footer   **/
 footer {
 	text-align: right;
