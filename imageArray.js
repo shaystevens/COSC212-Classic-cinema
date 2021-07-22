@@ -22,7 +22,7 @@ function setup() {
     imageList.push(scifi.makeHTML());
     imageList.push(hitchcock.makeHTML());
     imageIndex = 0;
-    window.onload = nextImage;
+    nextImage();
     setInterval(nextImage, 2000);
 }
 
