@@ -156,13 +156,14 @@ main {
 	text-align: center;
 	width: 32%;
 }
-
+/** Film objects*/
 .center {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
+/** Film objects*/
 figcaption {
 	text-align: center;
 }
