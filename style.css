@@ -157,10 +157,17 @@ main {
 	width: 32%;
 }
 /** Film objects*/
-.center {
-	display: block;
+#images {
+	display: flex;
 	margin-left: auto;
 	margin-right: auto;
+	justify-content: center;
+
+}
+
+#images a{
+	position: relative;
+
 }
 
 /** Film objects*/
