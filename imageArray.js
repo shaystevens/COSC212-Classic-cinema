@@ -1,5 +1,4 @@
 var imageList, imageIndex;
-
 function nextImage() {
     "use strict";
     if(imageIndex === imageList.length){
@@ -31,7 +30,7 @@ function MovieCategory(title, image, page) {
     this.image = image;
     this.page = page;
     this.makeHTML = function() {
-        return "<a href='" + page + "'><figure><img src='" + image + "' class='center' ><figcaption>" + title + "</figcaption></figure></a>";
+        return "<a href='" + this.page + "'><figure><img src='" + this.image + "'><figcaption>" + this.title + "</figcaption></figure></a>";
     };
 }
 
