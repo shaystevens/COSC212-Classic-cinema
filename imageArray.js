@@ -45,7 +45,9 @@ if (document.getElementById) {
         window.addEventListener('load', imageArray.setup);
     } else if (window.attachEvent) {
         window.attachEvent('onload', imageArray.setup);
+        /* jshint ignore:start */
     } else {
         alert("Could not attach 'imageArray.setup' to the 'window.onload' event");
+        /* jshint ignore:end */
     }
 }

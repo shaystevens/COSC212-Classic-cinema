@@ -4,8 +4,10 @@ var showHide = (function(){
 
     function showHideDetails() {
         var paragraphs, p, image, i;
+        /* jshint ignore:start */
         paragraphs = this.parentNode.getElementsByTagName("p");
         image = this.parentNode.getElementsByTagName("img");
+        /* jshint ignore:end */
         for (p = 0; p < paragraphs.length; p+=1) {
             // Show or hide paragraphs[p]
             if (paragraphs[p].style.display === "none") {
@@ -42,7 +44,9 @@ if (document.getElementById) {
         window.addEventListener('load', showHide.setup);
     } else if (window.attachEvent) {
         window.attachEvent('onload', showHide.setup);
+        /* jshint ignore:start */
     } else {
         alert("Could not attach 'showHide.setup' to the 'window.onload' event");
+        /* jshint ignore:end */
     }
 }
