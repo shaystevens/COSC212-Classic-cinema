@@ -1,9 +1,15 @@
 var cart = (function(){
     "use strict";
     var pub = {};
+    var movie;
 
     function addToCart(){
-        alert("You pressed the button");
+        movie = {
+            title: this.parentElement.parentElement.querySelector("h3").innerText ,
+             price: this.parentElement.querySelector("span").innerText
+        };
+
+        alert(JSON.stringify(movie));
 
     }
 
@@ -15,7 +21,6 @@ var cart = (function(){
             buyButton.style.cursor = "pointer"; //Let's user know they can click on title
             buyButton.onclick = addToCart;
         }
-
     };
 
     return pub;
