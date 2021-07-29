@@ -31,7 +31,7 @@ var imageArray = (function(){
         this.image = image;
         this.page = page;
         this.makeHTML = function() {
-            return "<a href='" + this.page + "'><figure><img src='" + this.image + "'><figcaption>" + this.title + "</figcaption></figure></a>";
+            return "<a href='" + this.page + "'><figure><img alt = 'Metropolis' src='" + this.image + " '><figcaption>" + this.title + "</figcaption></figure></a>";
         };
     }
 
