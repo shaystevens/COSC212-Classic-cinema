@@ -6,21 +6,27 @@ var cart = (function(){
 
     function addToCart(){
         movie = {
-            title: this.parentElement.parentElement.querySelector("h3").innerText ,
-             price: this.parentElement.querySelector("span").innerText
+            title: this.parentElement.parentElement.querySelector("h3").innerHTML ,
+             price: this.parentElement.querySelector("span").innerHTML
         };
+
         movieArray.push(movie);
-        if((Cookie.get("Movie(s)"))!== ""){
-            Cookie.clear("Movie(s)");
-            document.cookie = "Movie(s)=" + JSON.stringify(movieArray);
-        } else {
-            document.cookie = "Movie(s)=" + JSON.stringify(movieArray);
+        if(Cookie.get("Movie") === null){
+            Cookie.set("Movie", JSON.stringify(movieArray), 1);
+        } else{
+            movieArray = Cookie.get("Movie");
+            movieArray = JSON.parse(movieArray);
+            movieArray.push(movie);
+            Cookie.set("Movie",  JSON.stringify(movieArray), 1);
         }
 
+        alert(JSON.stringify(movieArray));
 
     }
 
     pub.setup = function(){
+
+
         var buyButton, films, f;
         films = document.getElementsByClassName("film");
         for (f = 0; f < films.length; f += 1) {
@@ -46,16 +52,19 @@ if (document.getElementById) {
 }
 
 var Cookie = (function () {
-    var pub = {};
 
+    var pub = {};
     pub.set = function (name, value, hours) {
         var date, expires;
+
         if (hours) {
-            date = new Date(); date.setHours(date.getHours() + hours); expires = "; expires=" + date.toGMTString();
+            date = new Date();
+            date.setHours(date.getHours() + hours);
+            expires = "; expires=" + date.toGMTString();
         } else {
             expires = "";
         }
-        document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
+        document.cookie = name + "=" + value + expires + "; path=/";
     };
 
     pub.get = function (name) {
@@ -65,7 +74,7 @@ var Cookie = (function () {
         for (i = 0; i < cookies.length; i += 1) {
             cookie = cookies[i].trim();
             if (cookie.indexOf(nameEq) === 0) {
-                return decodeURIComponent(cookie.substring(nameEq.length, cookie.length));
+                return cookie.substring(nameEq.length, cookie.length);
             }
         }
         return null;
