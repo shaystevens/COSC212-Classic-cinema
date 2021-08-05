@@ -4,17 +4,23 @@ var shoppingCart = (function(){
     var movieArray = [];
 
     function cart(){
-        let par, i, movie, title, price;
+        let par, i, movie, title, price, unorlist, movieList;
+        let total = 0;
         par = document.getElementById("cartDisplay");
+        unorlist = document.getElementById("movieDisplay");
         if (Cookie.get("Movie") === null) {
             par.innerText = "Your cart is currently empty.";
         } else {
             movieArray = JSON.parse(Cookie.get("Movie"));
             for(i=0; i < movieArray.length; i++){
+                movieList = document.createElement("li");
                 movie = movieArray[i];
-                title = Object.keys(movie)[0];
-                price = Object.keys(movie)[1];
-                par.innerText = JSON.stringify(title) + JSON.stringify(price);
+                title = Object.values(movie)[0];
+                price = Object.values(movie)[1];
+                total += parseFloat(price);
+                movieList.innerText = "Movie title: " + title + " Price: " + price;
+                unorlist.append(movieList);
+                par.innerText = "The Total Price is: " + total;
 
             }
 

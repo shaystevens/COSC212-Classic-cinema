@@ -122,6 +122,10 @@ main {
 	width: 30%;
 }
 
+#cartDisplay {
+	text-align: center;
+}
+
 #movieList li img {
 	display: block;
 	margin: 0 auto;

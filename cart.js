@@ -25,8 +25,6 @@ var cart = (function(){
     }
 
     pub.setup = function(){
-
-
         var buyButton, films, f;
         films = document.getElementsByClassName("film");
         for (f = 0; f < films.length; f += 1) {
