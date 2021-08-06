@@ -6,6 +6,7 @@ var shoppingCart = (function(){
     function cart(){
         let par, i, movie, title, price, unorlist, movieList;
         let total = 0;
+
         par = document.getElementById("cartDisplay");
         unorlist = document.getElementById("movieDisplay");
         if (Cookie.get("Movie") === null) {
@@ -48,7 +49,7 @@ if (document.getElementById) {
 }
 
 var Cookie = (function () {
-
+    "use strict";
     var pub = {};
     pub.set = function (name, value, hours) {
         var date, expires;

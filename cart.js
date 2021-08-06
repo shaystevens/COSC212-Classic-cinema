@@ -20,7 +20,6 @@ var cart = (function(){
             Cookie.set("Movie",  JSON.stringify(movieArray), 1);
         }
 
-        alert(JSON.stringify(movieArray));
 
     }
 
