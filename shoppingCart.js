@@ -9,9 +9,12 @@ var shoppingCart = (function(){
 
         par = document.getElementById("cartDisplay");
         unorlist = document.getElementById("movieDisplay");
+        var shoppingForm = document.getElementById("checkoutForm");
         if (Cookie.get("Movie") === null) {
             par.innerText = "Your cart is currently empty.";
+            shoppingForm.style.display = "none";
         } else {
+            shoppingForm.style.display = "block";
             movieArray = JSON.parse(Cookie.get("Movie"));
             for(i=0; i < movieArray.length; i++){
                 movieList = document.createElement("li");
@@ -21,7 +24,7 @@ var shoppingCart = (function(){
                 total += parseFloat(price);
                 movieList.innerText = "Movie title: " + title + " Price: " + price;
                 unorlist.append(movieList);
-                par.innerText = "The Total Price is: " + total;
+                par.innerText = "The Total Price is: " + total.toFixed(2);
 
             }
 

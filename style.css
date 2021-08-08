@@ -126,6 +126,10 @@ main {
 	text-align: center;
 }
 
+#purchaseSuccess{
+	text-align: center;
+}
+
 #movieList li img {
 	display: block;
 	margin: 0 auto;

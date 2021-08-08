@@ -19,8 +19,6 @@ var cart = (function(){
             movieArray.push(movie);
             Cookie.set("Movie",  JSON.stringify(movieArray), 1);
         }
-
-
     }
 
     pub.setup = function(){
