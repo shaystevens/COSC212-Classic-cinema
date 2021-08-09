@@ -638,3 +638,39 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	margin-left: -12px;
 	border-right-color: #fff;
 	}
+
+#map{
+	width : 675px;
+	height: 550px;
+}
+
+#popupP{
+	text-align: right;
+}
+
+#popupB{
+	text-align: right;
+	margin-left: 20px;
+}
+
+#popupImage{
+	float: left;
+	width  50px;
+	height: 80px;
+}
+
+#sciP{
+	text-align: right;
+	margin-left: 20px;
+}
+
+#sciB{
+	text-align: right;
+	margin-left: 20px;
+}
+
+#sciImage{
+	float: left;
+	width  50px;
+	height: 80px;
+}
