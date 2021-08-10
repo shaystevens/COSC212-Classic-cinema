@@ -243,7 +243,7 @@ var SampleValidator = (function () {
     }
 
     function checkEmailFormat(textValue) {
-        var pattern = /^[a-zA-Z0-9_\-]+(\.[a-zA-Z0-9_\-]+)*$/;
+        var pattern = /^[a-zA-Z0-9_\-]+\@[a-zA-Z0-9_\-]+(\.[a-zA-Z0-9_\-]+)+$/;
         return pattern.test(textValue);
     }
 
@@ -251,7 +251,7 @@ var SampleValidator = (function () {
         if(!checkNotEmpty(email)){
             messages.push("You must enter an email");
         }else{
-            if(checkEmailFormat(email)){
+            if(!checkEmailFormat(email)){
                 messages.push("Please enter a valid email");
             }
         }
