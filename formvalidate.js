@@ -188,9 +188,13 @@ var SampleValidator = (function () {
     }
 
     function displayErrorMessages(s){
-        var eMessage;
+        var eMessage, i;
         eMessage = document.getElementById("cartError");
-        eMessage.innerText = s;
+        for(i=0; i<s.length; i++){
+           var li = document.createElement("li");
+           li.innerText= s[i];
+           eMessage.append(li);
+        }
     }
 
     function checkName(name, messages){
