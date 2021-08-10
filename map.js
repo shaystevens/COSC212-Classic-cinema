@@ -58,18 +58,12 @@ var map = (function(){
             "<p id= " + 'sciP' + ">Specialising in Science Fiction</p>");
 
 
-        L.circle( [-45.875, 170.500],
-            { radius: 100,
-                color: 'red',
-                fillColor: 'red',
+        L.circle( [-45.873782, 170.502896],
+            { radius: 50,
+                color: 'blue',
+                fillColor: 'green',
                 fillOpacity: 0.5 } ).addTo(map);
 
-        L.polygon( [ [-45.874, 170.500],
-                [-45.875, 170.499],
-                [-45.875, 170.501] ],
-            { color: 'green',
-                fillColor: 'blue',
-                fillOpacity: 0.25 } ).addTo(map);
 
         map.on('click', onMapClick);
 

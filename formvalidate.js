@@ -190,6 +190,7 @@ var SampleValidator = (function () {
     function displayErrorMessages(s){
         var eMessage, i;
         eMessage = document.getElementById("cartError");
+        eMessage.innerText = "";
         for(i=0; i<s.length; i++){
            var li = document.createElement("li");
            li.innerText= s[i];
