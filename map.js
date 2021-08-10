@@ -42,19 +42,19 @@ var map = (function(){
         //North
         northMarker = L.marker([-45.860973, 170.511925]).addTo(map);
         northMarker.bindPopup("<b id=" + 'popupB' + ">North Store</b>" +
-            "<img id= " + 'popupImage' + " src= " + 'images/The_Birds.jpg' + ">" +
+            "<img id= " + 'popupImage' + " src= " + 'images/The_Birds.jpg' + " alt=" + 'The_Birds' + " >" +
             "<p id= " + 'popupP' + ">Specialising in Alfred Hitchcock</p>");
 
         //Central
         centralMarker = L.marker([-45.873782, 170.502896]).addTo(map);
         centralMarker.bindPopup("<b id=" + 'popupB' + ">Central Store</b>" +
-            "<img id= " + 'popupImage' + " src= " + 'images/Metropolis.jpg' + ">" +
+            "<img id= " + 'popupImage' + " src= " + 'images/Metropolis.jpg' + " alt=" + 'Metropolis' + ">" +
             "<p id= " + 'popupP' + ">Specialising in Classic Cinema</p>");
 
         //South
         southMarker = L.marker([-45.885554, 170.496504]).addTo(map);
         southMarker.bindPopup("<b id=" + 'sciB' + ">South Store</b>" +
-            "<img id= " + 'sciImage' + " src= " + 'images/Plan_9_from_Outer_Space.jpg' + ">" +
+            "<img id= " + 'sciImage' + " src= " + 'images/Plan_9_from_Outer_Space.jpg' + " alt=" + 'Outer_Space' +  ">" +
             "<p id= " + 'sciP' + ">Specialising in Science Fiction</p>");
 
 
