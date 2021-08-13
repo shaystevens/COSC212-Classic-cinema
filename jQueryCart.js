@@ -6,8 +6,8 @@ var cart = (function(){
 
     function addToCart(){
         movie = {
-            title: this.parentElement.parentElement.querySelector("h3").innerHTML ,
-            price: this.parentElement.querySelector("span").innerHTML
+            title: $(this).parent().parent().find("h3").html() ,
+            price: $(this).parent().find("span").html()
         };
 
         movieArray.push(movie);
@@ -22,30 +22,14 @@ var cart = (function(){
     }
 
     pub.setup = function(){
-        var buyButton, films, f;
-        films = $("film");
-        for (f = 0; f < films.length; f += 1) {
-            $("#buttonID").click(eventHandler);
-            buyButton = films[f].getElementsByClassName("buy")[0];
-            buyButton.style.cursor = "pointer"; //Let's user know they can click on title
-            buyButton.onclick = addToCart;
-        }
+        $(".buy").click(addToCart);
+        $(".buy").css({cursor: "pointer"});
     };
 
     return pub;
 }());
 
-if (document.getElementById) {
-    if (window.addEventListener) {
-        window.addEventListener('load', cart.setup);
-    } else if (window.attachEvent) {
-        window.attachEvent('onload', cart.setup);
-        /* jshint ignore:start */
-    } else {
-        alert("Could not attach 'cart.setup' to the 'window.onload' event");
-        /* jshint ignore:end */
-    }
-}
+$(document).ready(cart.setup);
 
 var Cookie = (function () {
 
