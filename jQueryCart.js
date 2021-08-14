@@ -22,8 +22,7 @@ var cart = (function(){
     }
 
     pub.setup = function(){
-        $(".buy").click(addToCart);
-        $(".buy").css({cursor: "pointer"});
+        $(".buy").click(addToCart).css({cursor: "pointer"});
     };
 
     return pub;
