@@ -1,14 +1,12 @@
 var Reviews = (function() {
     var pub = {};
+
     function showReviews() {
-        var target = $(this).parent().find(".review")[0];
-        var data = $(this).parent().find("img")[0].src.replace("images", "reviews").replace("jpg", "xml");
-        console.log(data);
-        console.log(target);
-        console.log("Show Reviews called");
+        let target = $(this).parent().find(".review")[0];
+        let xmlSource = $(this).parent().find("img")[0].src.replace("images", "reviews").replace("jpg", "xml");
         $.ajax({
             type: "GET",
-            url: data,
+            url: xmlSource,
             cache: false,
             success: function(data) {
                 parseReviews(data, target);
@@ -17,16 +15,29 @@ var Reviews = (function() {
     }
 
     function parseReviews(data, target){
-        var x = target.html();
+        let html, dl;
+        $(target).append("<dl></dl>");
+        console.log(target);
         $(data).find("review").each(function () {
-            var rating = $(this).find("rating")[0].textContent;
-            var user = $(this).find("user")[0].textContent;
+            let rating = $(this).find("rating")[0].textContent;
+            let user = $(this).find("user")[0].textContent;
+            html = "<dt>" + user + ": </dt> <dd>" + rating + "</dd>"
+            dl = $(target).find("dl")[0];
+            $(dl).append(html);
+            console.log(target);
         });
     }
+
+
     pub.setup = function() {
         var film = $(".film");
         var $newDiv = $("<div/>").addClass("review");
-        var $newinput = $('<input type='+"button " + 'value=' + "Show"  +"Reviews" + '>').addClass("showReviews");
+        var $newinput = $('<input/>').attr({
+            type: "button",
+            class: "showReviews",
+            value: "Show Reviews"
+        });
+
         film.append($newinput);
         film.append($newDiv);
         $(".showReviews").click(showReviews);
