@@ -188,3 +188,19 @@ figcaption {
 footer {
 	text-align: right;
 }
+
+dl{
+	font-size: 15px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.errorClass{
+	margin-top: 0;
+}
+
+dd{
+	margin-left: 50px;
+	margin-top: -17px;
+	margin-bottom: 20px;
+}

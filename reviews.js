@@ -10,22 +10,44 @@ var Reviews = (function() {
             cache: false,
             success: function(data) {
                 parseReviews(data, target);
+            },
+            error: function (){
+                displayError(target);
             }
         });
     }
 
+    function displayError(target){
+        if(target.style.display === "block"){
+            target.style.display = "none";
+        }else if(target.style.display === "none") {
+            target.style.display = "block";
+        }else{
+            target.style.display = "block";
+            $(target).append("<dl><dt>" + "There is no reviews for this movie." + "</dt></dl>");
+            $(target).find('dl').classList.add("errorClass");
+        }
+    }
+
     function parseReviews(data, target){
-        let html, dl;
-        $(target).append("<dl></dl>");
-        console.log(target);
-        $(data).find("review").each(function () {
-            let rating = $(this).find("rating")[0].textContent;
-            let user = $(this).find("user")[0].textContent;
-            html = "<dt>" + user + ": </dt> <dd>" + rating + "</dd>"
-            dl = $(target).find("dl")[0];
-            $(dl).append(html);
-            console.log(target);
-        });
+        if(target.style.display === "block"){
+            target.style.display = "none";
+        }else if(target.style.display === "none") {
+            target.style.display = "block";
+        }else{
+            let dl;
+            $(target).append("<dl></dl>");
+            if($(data).find("review").length === 0){
+                displayError(target);
+            }
+            $(data).find("review").each(function () {
+                let rating = $(this).find("rating")[0].textContent;
+                let user = $(this).find("user")[0].textContent;
+                dl = $(target).find("dl")[0];
+                $(dl).append("<dt>" + user + ": </dt> <dd>" + rating + "</dd>");
+            });
+            target.style.display = "block";
+        }
     }
 
 
@@ -40,6 +62,7 @@ var Reviews = (function() {
 
         film.append($newinput);
         film.append($newDiv);
+        $("showReviews").css("cursor", "pointer");
         $(".showReviews").click(showReviews);
     }
     return pub;
