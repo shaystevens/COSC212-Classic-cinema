@@ -14,6 +14,8 @@ var map = (function(){
         if (this.textContent === 'Central') {
             markerLocation = [centralMarker.getLatLng()];
             markerBounds = L.latLngBounds(markerLocation);
+            console.log(markerLocation);
+            console.log(markerBounds);
             map.fitBounds(markerBounds);
         }
 
