@@ -32,9 +32,12 @@ var Reviews = (function() {
     function parseReviews(data, target){
         if(target.style.display === "block"){
             target.style.display = "none";
+            target.previousSibling.value = "Show Reviews";
         }else if(target.style.display === "none") {
             target.style.display = "block";
+            target.previousSibling.value = "Hide Reviews";
         }else{
+            target.previousSibling.value = "Hide Reviews";
             let dl;
             $(target).append("<dl></dl>");
             if($(data).find("review").length === 0){
