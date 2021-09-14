@@ -39,15 +39,9 @@ var imageArray = (function(){
 
 }());
 
-
-if (document.getElementById) {
-    if (window.addEventListener) {
-        window.addEventListener('load', imageArray.setup);
-    } else if (window.attachEvent) {
-        window.attachEvent('onload', imageArray.setup);
-        /* jshint ignore:start */
-    } else {
-        alert("Could not attach 'imageArray.setup' to the 'window.onload' event");
-        /* jshint ignore:end */
-    }
-}
+$(document).ready(function() {
+    imageArray.setup;
+    $('img').hide().load(function () {
+        $(this).fadeIn(1000);
+    });
+});
