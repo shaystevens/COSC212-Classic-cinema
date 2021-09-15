@@ -9,6 +9,7 @@ var imageArray = (function(){
         }
         document.getElementById("images").innerHTML = imageList[imageIndex];
         imageIndex++;
+        $('img').fadeOut(2000, nextImage);
     }
 
     pub.setup = function() {
@@ -23,7 +24,7 @@ var imageArray = (function(){
         imageList.push(hitchcock.makeHTML());
         imageIndex = 0;
         nextImage();
-        setInterval(nextImage, 2000);
+        $('img').fadeOut(2000, nextImage);
     };
 
     function MovieCategory(title, image, page) {
@@ -39,9 +40,4 @@ var imageArray = (function(){
 
 }());
 
-$(document).ready(function() {
-    imageArray.setup;
-    $('img').hide().load(function () {
-        $(this).fadeIn(1000);
-    });
-});
+$(document).ready(imageArray.setup);
