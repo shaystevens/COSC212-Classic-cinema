@@ -23,8 +23,8 @@ var imageArray = (function(){
         imageList.push(scifi.makeHTML());
         imageList.push(hitchcock.makeHTML());
         imageIndex = 0;
-        nextImage();
         $('img').fadeOut(2000, nextImage);
+        nextImage();
     };
 
     function MovieCategory(title, image, page) {
