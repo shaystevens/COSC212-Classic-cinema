@@ -9,6 +9,7 @@ var imageArray = (function(){
         }
         document.getElementById("images").innerHTML = imageList[imageIndex];
         imageIndex++;
+        $('img').fadeOut(2000, nextImage);
     }
 
     pub.setup = function() {
@@ -22,8 +23,8 @@ var imageArray = (function(){
         imageList.push(scifi.makeHTML());
         imageList.push(hitchcock.makeHTML());
         imageIndex = 0;
+        $('img').fadeOut(2000, nextImage);
         nextImage();
-        setInterval(nextImage, 2000);
     };
 
     function MovieCategory(title, image, page) {
@@ -39,15 +40,4 @@ var imageArray = (function(){
 
 }());
 
-
-if (document.getElementById) {
-    if (window.addEventListener) {
-        window.addEventListener('load', imageArray.setup);
-    } else if (window.attachEvent) {
-        window.attachEvent('onload', imageArray.setup);
-        /* jshint ignore:start */
-    } else {
-        alert("Could not attach 'imageArray.setup' to the 'window.onload' event");
-        /* jshint ignore:end */
-    }
-}
+$(document).ready(imageArray.setup);
